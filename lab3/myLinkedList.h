@@ -12,8 +12,9 @@ struct 	Evaluation
 	Evaluation* next;
 };
 
+//!function decleration 
 Evaluation* add(Evaluation*, int&);
 Evaluation* remove(Evaluation*, int&);
 void display(Evaluation*);
-int average(Evaluation*, int const&);
+void average(Evaluation*);
 
