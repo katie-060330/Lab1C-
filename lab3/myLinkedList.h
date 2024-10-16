@@ -16,5 +16,5 @@ struct 	Evaluation
 Evaluation* add(Evaluation*, int&);
 Evaluation* remove(Evaluation*, int&);
 void display(Evaluation*);
-void average(Evaluation*);
+int average(Evaluation*);
 

@@ -4,6 +4,7 @@
 
 int main()
 {
+	//?start the list with one student so we are not passing a undefined first
 	Evaluation*  first = new Evaluation; 
 		cout<<"Enter the student: "; 
 		cin>> first->student; 
@@ -24,10 +25,9 @@ int main()
 		cout << "Your choice ??:";
 		cin>> choice; 
 
-	
 		
 
-
+	
 
 		int number; 
 
@@ -81,11 +81,17 @@ Evaluation* add(Evaluation* p, int& number)
 
 	if (number == 0){
 		toInsert->next = p->next; 
+		//!returning the new pointer to the first elelemnt 
 		return toInsert; 
 		
 	}
 	else{
 		for(int i = 0; i < number-1; i++){
+			//!verification of the index 
+			if(p->next == nullptr){
+				cout<<"INDEX OUT OF BOUNDS"; 
+				return p; 
+			}
 			p = p->next; 
 			
 		}
@@ -94,6 +100,7 @@ Evaluation* add(Evaluation* p, int& number)
 		p->next= toInsert; 
 	
 	}
+	//!returning the pointer to the firsr elelemtn 
 	return first; 
 
 }
@@ -106,19 +113,28 @@ Evaluation* add(Evaluation* p, int& number)
 Evaluation* remove(Evaluation* p, int& number)
 {
 	Evaluation* current = p; 
-	Evaluation* newFirst; 
+
 	if (number ==0){
+		Evaluation* newFirst; 
 		newFirst = current->next; 
 		current->next = nullptr; 
+		delete current; 
 	}
-	else{
-		for (int i = 0; i < number; i++){
-			current = current->next; 
-		}
-		newFirst = current->next; 
-		current->next = nullptr; 
+
+	for (int i = 0; i < number-1; ++i){
+		if(p->next == nullptr){
+			//!verification of the index out of bounds 
+			cout<<"INDEX OUT OF BOUNDS"; 
+			return p; 
+			}
+		
+		current = current->next; 
 	}
-	return newFirst; 
+	Evaluation* toDelete = current->next; 
+	current->next = toDelete->next; 
+	delete toDelete; 
+	
+	return p; 
 }
 
 
@@ -128,12 +144,14 @@ Evaluation* remove(Evaluation* p, int& number)
 **/
 void display(Evaluation* p)
 {
-	 Evaluation* current = p; 
+	 Evaluation* temp = p;
+	 while (temp) {
+            cout<<"Student: "<<temp->student<<" "<<"Grade: "<<temp->grade<<endl; 
+            temp = temp->next;
+        } 
+	 
 
-    while (current != nullptr) {
-		std::cout<<"Student: "<<current->student<<" "<<"Grade: "<<current->grade; 
-		current = current->next;
-}
+  
 }
 
 
@@ -141,22 +159,24 @@ void display(Evaluation* p)
 /**
 *average() Function *
 ***/
-void average(Evaluation* p)
+int average(Evaluation* p)
 {
 	int sum = 0; 
 	int counter = 0; 
 	 Evaluation* current = p; 
+	 if (current == nullptr){
+		return 0; 
+	}
 
     while (current != nullptr) {
 		sum+= current->grade; 
 		counter +=1; 
 		current = current->next;
+
+		
+	}
+
+	cout<< "The class average is: " <<sum/counter; 
+	return 1; 
 }
-cout<< "The class average is: " <<sum/counter; 
-}
-
-
-
-
-
 
