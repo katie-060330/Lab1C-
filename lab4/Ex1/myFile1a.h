@@ -12,5 +12,15 @@ public:
     int getHours();
 };
 
+Course::Course(int n, int h){
+    num = n; 
+    hours = h;
+}
 
+int Course::getNum(){
+    return num; 
+}
+int Course::getHours(){
+    return hours; 
+}
 
