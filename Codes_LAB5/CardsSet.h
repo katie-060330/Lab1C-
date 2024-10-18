@@ -12,3 +12,4 @@ private:
     Card set[52];
     int number;
 };
+
