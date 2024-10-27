@@ -7,8 +7,9 @@ int main(){
     a.novSet(); 
     a.shuffle();
     int i; 
-    for(i = 0; i < 52; i++ ){
-       a.set[i].write();
-    }
+    // for(i = 0; i < 52; i++ ){
+    //!moved set to public to test 
+    //    a.set[i].write();
+    // }
     return 0;  
 }

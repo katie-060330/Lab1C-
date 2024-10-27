@@ -10,8 +10,9 @@ public:
     Card lookIn(int no);
     void empty() { number = 0; }
 
-    Card set[52];
+
     private:
+    Card set[52];
     int number;
 };
 
@@ -29,6 +30,7 @@ void CardsSet::novSet(){
 
 	  	}
 	 }
+     number = 52; 
 }
 
 void CardsSet::shuffle(){
@@ -54,3 +56,19 @@ void CardsSet::shuffle(){
 
 
 }
+
+Card CardsSet::take(){
+    //!unsure if the number variable is used this way 
+    //* if the set in initally 0; when we inintalize hte novSet we have number = 52
+    //* if we take a number it will then be 51 cards meaning 
+    return set[number--];
+}
+
+void CardsSet::put(Card k){
+    set[number++] = k; 
+    
+}
+Card CardsSet::lookIn(int no){
+    return set[no];
+}
+
