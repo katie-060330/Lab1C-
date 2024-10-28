@@ -33,7 +33,7 @@ using namespace std;
         //if x is not in elem
         if(!contains(x)){
             //create a new array of size+1 and replace it with elem
-            int * newElem = new int[size+1];
+            int* newElem = new int[size+1];
             for(int i=0;i<size;i++){
                 newElem[i]=elem[i];
             }
@@ -73,9 +73,7 @@ using namespace std;
     bool SetInt::contains(int x){
         //for every element is there is an element that is the same as x then return true
         for(int i =0; i<size; i++){
-            if(elem[i]==x){
-                return true;
-            } 
+            if(containsIn(x,i)){return true;}
         }
         //else false
         return false;
