@@ -23,8 +23,8 @@ int main() {
 		{
 			packet.novSet();
 			packet.shuffle();
-			packet.take();
-			int p1 = you.play();
+			Card current = packet.take();
+			int p1 = you.play(current);
 			if (p1 > 21) {
 				cout << "You lost! " << endl;
 			}
@@ -33,7 +33,7 @@ int main() {
 			}
 			else // the computer must play
 			{
-				int p2 = me.play();
+				int p2 = me.play(packet.take());
 				if (p2 <= 21 && p2 >= p1) {
 					cout << "You lost! " << endl;
 				}
