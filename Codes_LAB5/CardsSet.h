@@ -1,4 +1,5 @@
 #include <cstdlib> 
+#include <ctime>
 class CardsSet {
 public:
     CardsSet() : number(0) {}

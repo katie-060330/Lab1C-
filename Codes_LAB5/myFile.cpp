@@ -2,7 +2,7 @@
 #include <iostream>
 using namespace std;
 
-//!CAN NOT EDIT THIS FILE
+//!CAN NOT EDIT THIS 
 
 #include "myFile.h"
 #include "Card.h"

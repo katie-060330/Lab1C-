@@ -27,6 +27,7 @@ Card::Card(color c, int v) {
 
 
 void Card::write(){
+    //! forgot to assign the suit to THIS cards value
     color suit = col;
     string suitName; 
     string valueName;
