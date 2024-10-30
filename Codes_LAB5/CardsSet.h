@@ -10,7 +10,7 @@ public:
     Card lookIn(int no);
     void empty() { number = 0; }
 
-
+    
     private:
     Card set[52];
     int number;
@@ -21,8 +21,7 @@ void CardsSet::novSet(){
 	
 	 int t=0;
 	 //for every color and face 
-	  for(int i=club; i <= spade; i++){
-       
+	  for(int i=0; i <= 3; i++){
         //?should deal with that as an edge case and add 13 from the value if it is over and if there is one ace 
 	  	for(int j=1;j<= 13; j++){
 			set[t] = Card(static_cast<color>(i), j);

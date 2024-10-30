@@ -2,7 +2,7 @@ class Player {
 public:
     Player(CardsSet& cardPacket, bool isComputer) : packet(cardPacket), computer
     (isComputer) {}
-    int play(Card card);
+    int play();
 private:
     CardsSet inHand;
     CardsSet& packet;
@@ -10,14 +10,13 @@ private:
     int countPoints();
 };
 
-int Player:: play(Card card){
+int Player:: play(){
     //im not sure about the packet.take()
     //because dont we already take it in the main
 
     int points =0;
-    inHand.put(card);
+    // inHand.put();
     cout<<"You get a card: ";
-    card.write();
     points=countPoints();
     cout<<"Your score is: "<< points << endl;
     return points;

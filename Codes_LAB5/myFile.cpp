@@ -2,6 +2,8 @@
 #include <iostream>
 using namespace std;
 
+//!CAN NOT EDIT THIS FILE
+
 #include "myFile.h"
 #include "Card.h"
 #include "CardsSet.h"
@@ -23,8 +25,8 @@ int main() {
 		{
 			packet.novSet();
 			packet.shuffle();
-			Card current = packet.take();
-			int p1 = you.play(current);
+			packet.take();
+			int p1 = you.play();
 			if (p1 > 21) {
 				cout << "You lost! " << endl;
 			}
@@ -33,7 +35,7 @@ int main() {
 			}
 			else // the computer must play
 			{
-				int p2 = me.play(packet.take());
+				int p2 = me.play();
 				if (p2 <= 21 && p2 >= p1) {
 					cout << "You lost! " << endl;
 				}
