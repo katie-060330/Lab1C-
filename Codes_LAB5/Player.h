@@ -13,27 +13,13 @@ private:
 };
 
 int Player:: play(){
+    inHand.empty();
     int cards = 0; 
     Card temp; 
     int points; 
     char answer[3];
 	bool continuous = true;
-    // if(computer){
-    //     while(countPoints() < 17){
-    //         inHand.put(packet.take());
-    //         temp = inHand.lookIn(cards); 
-    //         cout<<"Dealer get a card: ";
-    //         temp.write();
-    //         points=countPoints();
-    //         cout<<"Dealer score is: "<< points << endl;
-    //         cards++; 
 
-    //     }
-
-    // }
-    // else{
-
-    // }
     inHand.put(packet.take());
     temp = inHand.lookIn(cards); 
     cout<<"Player get a card: ";
@@ -54,9 +40,14 @@ int Player:: play(){
             points=countPoints();
             cout<<"Player score is: "<< points << endl;
             cards++;
+            if(points>=21){
+                continuous=false;
+                break;
+            }
             
     }
     }
+    return points;
     
 }
 

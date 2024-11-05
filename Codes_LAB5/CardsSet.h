@@ -35,6 +35,7 @@ void CardsSet::novSet(){
 
 void CardsSet::shuffle(){
     Card shuffled[52]; 
+    srand(time(0));
     int min  = 0; 
     int max = 51; 
     int arr[52];
